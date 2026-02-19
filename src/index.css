@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --music-bg: #0f1117;
+  --music-card: #1a1d27;
+  --music-border: #2a2d3a;
+}
+
+body {
+  margin: 0;
+  background: var(--music-bg);
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}

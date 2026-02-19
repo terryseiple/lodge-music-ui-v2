@@ -1,0 +1,16 @@
+services:
+  music-ui:
+    image: nginx:alpine
+    container_name: lodge-music-ui-v2
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
+    networks:
+      br0:
+        ipv4_address: 10.0.101.66
+
+networks:
+  br0:
+    name: br0
+    external: true
