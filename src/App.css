@@ -483,3 +483,25 @@ main {
   background: #10b981;
   color: white;
 }
+
+/* FIX WHITE DROPDOWN BACKGROUND - DARK THEME */
+.device-selector select,
+.provider-selector select {
+  background: #1f2937 !important;
+  color: white !important;
+}
+
+.device-selector select option,
+.provider-selector select option {
+  background: #1f2937 !important;
+  color: white !important;
+  padding: 0.75rem;
+}
+
+/* FIREFOX FIX */
+@-moz-document url-prefix() {
+  .device-selector select,
+  .provider-selector select {
+    background-color: #1f2937 !important;
+  }
+}
