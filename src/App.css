@@ -1,1 +1,485 @@
-/* Additional custom styles if needed */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+header {
+  background: rgba(16, 185, 129, 0.1);
+  border-bottom: 2px solid #10b981;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tabs button {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid transparent;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.tabs button:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #10b981;
+}
+
+.tabs button.active {
+  background: #10b981;
+  border-color: #10b981;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.error-banner {
+  background: #ef4444;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.success-banner {
+  background: #10b981;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.play-tab, .status-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controls-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.device-selector, .provider-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.device-selector label, .provider-selector label {
+  font-weight: 500;
+  color: #10b981;
+}
+
+.device-selector select, .provider-selector select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 2px solid #374151;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.device-selector select:focus, .provider-selector select:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+.search-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #374151;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 1rem;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+.search-box button {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  background: #10b981;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-box button:hover:not(:disabled) {
+  background: #059669;
+  transform: scale(1.05);
+}
+
+.search-box button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.track-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.track-item:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #10b981;
+  transform: translateX(5px);
+}
+
+.track-info {
+  flex: 1;
+}
+
+.track-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.track-artist {
+  color: #10b981;
+  margin-bottom: 0.25rem;
+}
+
+.track-album {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.track-provider {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.track-item button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.track-item button:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.status-tab {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.status-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 2px solid #374151;
+}
+
+.stat label {
+  font-weight: 500;
+  color: #10b981;
+}
+
+.stat .value {
+  font-weight: bold;
+}
+
+/* Now Playing Tab */
+.nowplaying-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.now-playing-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+
+.album-art-large {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.now-playing-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.now-playing-card .artist {
+  color: #10b981;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.now-playing-card .album {
+  color: #888;
+  margin: 0.5rem 0;
+}
+
+/* Playback Controls */
+.playback-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+
+.main-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.control-btn {
+  background: transparent;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  border-color: #ef4444;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.control-btn.play-pause {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  border-color: #ef4444;
+  border-width: 4px;
+}
+
+.control-btn.play-pause:hover {
+  border-color: #dc2626;
+  background: rgba(239, 68, 68, 0.1);
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+/* Volume Control */
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.volume-icon {
+  font-size: 1.5rem;
+}
+
+.volume-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.1);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  border: none;
+}
+
+.volume-value {
+  min-width: 45px;
+  text-align: right;
+  color: #10b981;
+  font-weight: 500;
+}
+
+/* Queue Section */
+.queue-section {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+
+.queue-section h3 {
+  margin: 0 0 1rem 0;
+  color: #10b981;
+}
+
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.queue-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.queue-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.queue-item.current {
+  background: rgba(16,185,129,0.2);
+  border-left: 3px solid #10b981;
+}
+
+.queue-number {
+  color: #888;
+  font-size: 0.9rem;
+  min-width: 30px;
+}
+
+.queue-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.queue-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-artist {
+  color: #888;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.now-playing-indicator {
+  color: #10b981;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #888;
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+}
+
+.playback-state {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #10b981;
+}
+
+/* BETTER SELECT DROPDOWN STYLING */
+.device-selector select option,
+.provider-selector select option {
+  background: #1f2937;
+  color: white;
+  padding: 0.75rem;
+}
+
+.device-selector select option:hover,
+.provider-selector select option:hover {
+  background: #10b981;
+  color: white;
+}
